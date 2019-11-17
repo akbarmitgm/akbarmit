@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
-
+import logo from '../../img/starinfoteck.png';
 class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
@@ -16,7 +16,7 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
             Post Feed
@@ -67,6 +67,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
+          <img src={logo} alt={"logo"} style={{ width: 42, height: 42 }} />
           <Link className="navbar-brand" to="/">
             AlumnusConnector
           </Link>
